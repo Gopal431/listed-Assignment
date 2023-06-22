@@ -1,0 +1,213 @@
+@import '../../assets/scss/Variables.scss';
+
+.menu-conatiner {
+  position: fixed;
+  width: 250px;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  background: $black;
+
+  .top-container {
+    .logo {
+      margin: 24px 0;
+      text-align: center;
+      width: 194px;
+      height: 34px;
+    }
+
+    .heading {
+      height: 20px;
+      display: block;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 20px;
+      text-align: center;
+      color: $white;
+     margin-top: 25px;
+    }
+
+    .header {
+      margin-top: 24px;
+      width: 150px;
+      height: 48px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: $white;
+      display: flex;
+      align-items: center;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      justify-content: space-around;
+      color: $white;
+      font-style: normal;
+      font-weight: bold;
+
+      .change-text {
+        color: $text-primary-dark;
+        opacity: 0.6;
+      }
+
+      .icon-Chevron-Right {
+        margin-left: 16px;
+      }
+    }
+
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottom-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .menu-item {
+      width: 130px;
+      padding: 12px 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+
+      span {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        font-weight: bold; 
+        margin-left: 10px;      
+      }
+      i {
+        font-size: 18px;
+        margin-right: 12px;
+        position: relative;
+        top: 2px;
+        color: $text-secondary-dark;
+      }
+    }
+
+    .menu-item+.menu-item {
+      margin-top: 15px;
+    }
+
+    .menu-item:hover {
+      background: $active-menu-background;
+
+      span,
+      i {
+        color: $white;
+      }
+    }
+
+    .menu-separater-container {
+      width: 100%;
+      margin-top: 16px;
+      margin-bottom: 10px;
+      color: $text-primary-dark;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+
+      .menu-separater-text {
+        padding-left: 24px;       
+        opacity: 0.6;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 15px;
+      }
+
+      i {
+        padding-right: 24px;
+        color: $text-secondary-dark;
+      }
+    }
+  }
+
+  .account-container {
+    position: absolute;
+    bottom: 24px;
+    padding: 0 24px;
+    color: $menu-border;
+
+    .account {
+      color: $menu-account-border;
+      size: 12px;
+      line-height: 14.63px;
+      margin-left: 5px;
+    }
+
+    .account-details {
+      box-sizing: border-box;
+
+    
+      margin-top: 13px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 8px 8px 12px;
+      gap: 38px;
+      
+      width: 202px;
+      height: 50px;
+      
+      
+      
+      border-radius: 8px;
+      
+    
+      
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 4px;
+
+        width: 72px;
+        height: 34px;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin-left: 50px;
+
+        .jotey {
+          width: 31px;
+          height: 15px;         
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          color: $white;
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+          
+        }
+
+        .store-code {         
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 15px;
+          color: $white;
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+        }
+      }
+    }
+
+  }
+}

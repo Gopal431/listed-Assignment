@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-function App() {
+const PageRoute = React.lazy(() => import('./page/PageRoute'));
+const AuthRoute = React.lazy(() => import('./auth/AuthRoute'));
+const App = () => {
+  const isLogin = (true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Suspense fallback={''}>
+        <BrowserRouter>
+          <Routes >
+            <Route path='' exact element={<Navigate replace to={"/auth"} />} />
+            <Route exact path='auth/*' element={!isLogin ? (<AuthRoute />) : (<Navigate replace to={"/pages"} />)} />
+            <Route exact path='pages/*' element={<  PageRoute />} />
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
     </div>
-  );
+  )
 }
-
-export default App;
+export default App
